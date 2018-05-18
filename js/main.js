@@ -25,7 +25,6 @@ function setupPlayer() {
 			autoplay : true
 		},
 		tweaks : {
-			max_buffer_level : 30,
 			file_protocol : true,
 			app_id : "com.bitmovin.demo.webapp"
 		}

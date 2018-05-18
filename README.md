@@ -23,7 +23,7 @@ var conf = {
 	},
 	tweaks : {
 		file_protocol : true,
-		app_id : "0698df69-bbea-46a9-90ec-22f69d38ce10"
+			app_id : "com.bitmovin.demo.webapp"
 	}
 };
 ```
