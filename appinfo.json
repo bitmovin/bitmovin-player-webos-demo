@@ -1,0 +1,11 @@
+{
+    "vendor": "Bitmovin",
+    "largeIcon": "largeIcon.png",
+    "icon": "icon.png",
+    "main": "index.html",
+    "id": "com.bitmovin.demo.webapp",
+    "title": "bitmovin-player-webos-demo-webapp",
+    "type": "web",
+    "version": "0.0.1",
+    "uiRevision":2
+}

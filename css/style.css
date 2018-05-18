@@ -1,0 +1,9 @@
+* {
+    margin:0;padding:0
+}
+
+h1 {
+    font-size:4.0em;margin:10px 0 20px 10px;color:#6587ac;
+}
+
+.canvas { width:960px;height:auto;margin-left:450px;margin-right:450px;background:#fff;}
