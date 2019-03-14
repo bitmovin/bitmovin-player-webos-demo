@@ -1,4 +1,4 @@
-var player;
+  var player;
 
 window.onload = function() {
 	console.log("setup player");
@@ -8,9 +8,9 @@ window.onload = function() {
 
 function setupPlayer() {
 	var config = {
-			  key: '7a94a7fd-61a6-40e1-b357-3d19e33ebcb1',
+			  key: '<YOUR_PLAYER_KEY>',
 			  analytics: {
-			    key: '8b4faeb2-0b7a-443e-9614-6fb40fdf5079',
+			    key: '<YOUR_ANALYTICS_KEY>',
 			    videoId: 'YOUR VIDEO ID',
 			    title: 'A descriptive video title'
 			  },
@@ -23,7 +23,7 @@ function setupPlayer() {
 			  }
 			};
 
-			var container = document.getElementById('my-player');
+			var container = document.getElementById('player');
 			player = new bitmovin.player.Player(container, config);
 
 			var source = {
@@ -34,7 +34,7 @@ function setupPlayer() {
 				// HEVC Stream
 				//dash : "https://bitmovin-a.akamaihd.net/content/multi-codec/hevc/stream.mpd",
 
-			    //progressive: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/MI201109210084_mpeg-4_hd_high_1080p25_10mbits.mp4',
+				//progressive: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/MI201109210084_mpeg-4_hd_high_1080p25_10mbits.mp4',
 
 				// DRM Stream
 				dash: 'https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd',
