@@ -16,8 +16,23 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    
     <!-- Bitmovin Player -->
-    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/bitmovinplayer.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-core.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-polyfill.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-engine-bitmovin.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-mserenderer.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-abr.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-drm.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-container-mp4.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-container-ts.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-xml.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-dash.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-hls.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-style.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-smooth.js"></script>
+    <script type="text/javascript" src="https://cdn.bitmovin.com/player/web/8/modules/bitmovinplayer-tizen.js"></script>
+    
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="webOSTVjs-1.1.0/webOSTV.js"></script>
 </head>
@@ -32,7 +47,6 @@
     <div class="container-fluid">
         <div class="content">
             <div class="row bitmovin-description">
-                <div class="col-lg-12 text-center">Your videos play everywhere with low startup delay, no buffering and in highest quality.</div>
             </div>
             <div id="webserver-warning">
                 <h2>Unsupported Protocol</h2>
@@ -45,11 +59,6 @@
             <div class="row">
                 <div class="col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
                     <div id="player"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>For more information about the Bitmovin Player, please have a look at our <a href="https://bitmovin.com/docs/player" target="_blank">documentation</a>.</p>
                 </div>
             </div>
         </div>
