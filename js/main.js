@@ -23,7 +23,7 @@ function setupPlayer() {
 	bitmovin.player.core.Player.addModule(window.bitmovin.player.tizen.default);
 	
 	var conf = {
-		key : "YOUR_PLAYER_KEY",
+		key : "18ca6ad5-9768-4129-bdf6-17685e0d14d2",
 		playback : {
 			autoplay : true,
 			preferredTech: [{
@@ -72,7 +72,6 @@ function setupPlayer() {
 	player.load(source).then(function(value) {
 		// Success
 		console.log("Successfully created bitmovin player instance");
-		player.setViewMode("fullscreen")
 	}, function(reason) {
 		// Error!
 		console.log("Error while creating bitmovin player instance");
