@@ -23,7 +23,7 @@ function setupPlayer() {
 	bitmovin.player.core.Player.addModule(window.bitmovin.player.tizen.default);
 	
 	var conf = {
-		key : "18ca6ad5-9768-4129-bdf6-17685e0d14d2",
+		key : "YOUR_PLAYER_KEY",
 		playback : {
 			autoplay : true,
 			preferredTech: [{
