@@ -1,8 +1,8 @@
-var player
+var player;
 
 window.onload = function() {
-	setupPlayer();
 	setupControllerEvents();
+	setupPlayer();
 }
 
 
@@ -78,10 +78,10 @@ function setupPlayer() {
 		console.log("Error while creating bitmovin player instance");
 	});
 	
-	player.on(bitmovin.player.PlayerEvent.Warning, function(data){
+	player.on(bitmovin.player.core.PlayerEvent.Warning, function(data){
         console.log("On Warning: "+JSON.stringify(data))
     });
-	player.on(bitmovin.player.PlayerEvent.Error, function(data){
+	player.on(bitmovin.player.core.PlayerEvent.Error, function(data){
         console.log("On Error: "+JSON.stringify(data))
     });
 }
@@ -96,6 +96,9 @@ function setupControllerEvents() {
 		    keycode = inEvent.which;
 		} 
 		switch(keycode) {
+	      	case 13:
+	          tooglePlayPause();
+	          break;
 		    case 415: 
 		    	//Play Button Pressed
 		    	player.play();
@@ -119,7 +122,13 @@ function setupControllerEvents() {
 		    default:
 		    	console.log("Key Pressed: "+keycode);
 		}
-		
-		
 	});
+}
+
+function tooglePlayPause() {
+	if(player.isPaused()) {
+		player.play();
+	} else {
+	   player.pause();
+	}
 }
