@@ -1,3 +1,5 @@
+var player
+
 window.onload = function() {
 	setupPlayer();
 	setupControllerEvents();
@@ -5,44 +7,72 @@ window.onload = function() {
 
 
 function setupPlayer() {
+	
+	// add all necessary (and loaded) modules to the player core
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.polyfill.default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player['engine-bitmovin'].default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player['container-mp4'].default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player['container-ts'].default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.mserenderer.default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.abr.default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.drm.default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.xml.default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.dash.default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.hls.default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.style.default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.tizen.default);
+	
 	var conf = {
-		key : "YOUR PLAYER KEY",
+		key : "YOUR_PLAYER_KEY",
 		playback : {
-			autoplay : true
+			autoplay : true,
+			preferredTech: [{
+				player: 'html5',
+			    streaming: 'dash'
+			  }]
 		},
-//		style: {
-//			ux: false
-//		},
+		style: {
+			ux: false
+		},
 		tweaks : {
 			file_protocol : true,
 			app_id : "com.bitmovin.demo.webapp",
-			max_buffer_level: 30,
-			max_backward_buffer_level: 10,
 			BACKWARD_BUFFER_PURGE_INTERVAL: 10
+		},
+		buffer :{
+			video: {
+				forwardduration: 30,
+				backwardduration: 10,
+			},
+			audio: {
+				forwardduration: 30,
+				backwardduration: 10
+			}
 		}
-	};
+	}
 
 	var source = {
 		// AVC Stream
-		//dash : "https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
+        // dash : "https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
 		// HEVC Stream
-		//dash : "https://bitmovin-a.akamaihd.net/content/multi-codec/hevc/stream.mpd"
+		// dash : "https://bitmovin-a.akamaihd.net/content/multi-codec/hevc/stream.mpd"
 	
 		//Widevine Stream
-		dash: "http://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd",
+		dash: 'https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd',
 		drm: {
 			widevine: {
-				LA_URL: "https://widevine-proxy.appspot.com/proxy",
-			}			
+		        LA_URL: 'https://widevine-proxy.appspot.com/proxy'
+		    }
 		}
 	}
 	
 	var container = document.getElementById('player');
-	var player = new bitmovin.player.Player(container, conf);
+	player = new bitmovin.player.core.Player(container, conf);
 	
 	player.load(source).then(function(value) {
 		// Success
 		console.log("Successfully created bitmovin player instance");
+		player.setViewMode("fullscreen")
 	}, function(reason) {
 		// Error!
 		console.log("Error while creating bitmovin player instance");
