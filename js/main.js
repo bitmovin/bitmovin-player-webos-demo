@@ -20,7 +20,7 @@ function setupPlayer() {
 	bitmovin.player.core.Player.addModule(window.bitmovin.player.dash.default);
 	bitmovin.player.core.Player.addModule(window.bitmovin.player.hls.default);
 	bitmovin.player.core.Player.addModule(window.bitmovin.player.style.default);
-	bitmovin.player.core.Player.addModule(window.bitmovin.player.tizen.default);
+	bitmovin.player.core.Player.addModule(window.bitmovin.player.webos.default);
 	
 	var conf = {
 		key : "YOUR_PLAYER_KEY",
