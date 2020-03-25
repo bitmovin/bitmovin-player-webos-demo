@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+DEVICE_HOST="$1"
+KEY_PASSPHRASE="$2"
+
+if [ -z "$DEVICE_HOST" ] || [ -z "$KEY_PASSPHRASE" ]; then
+    echo "Usage: $0 <device-host-or-ip> <device-ssh-key-passphrase>"
+    exit 1
+fi
+
+INFO="{ 'host': '$DEVICE_HOST', 'port': '9922', 'username': 'prisoner' }"
+
+BINDIR=node_modules/ares-webos-sdk/bin
+
+# Don't know whether the device is already registered...
+$BINDIR/ares-setup-device.sh --add "$DEVICE_HOST" --info "$INFO" 2>/dev/null \
+  || $BINDIR/ares-setup-device.sh --modify "$DEVICE_HOST" --info "$INFO"
+
+$BINDIR/ares-novacom.sh --device "$DEVICE_HOST" --getkey --passphrase "$KEY_PASSPHRASE" \
+  || (echo "Cannot get ssh key from device $DEVICE_HOST. Is Key Server enabled in the Developer Mode app?" && exit 1)
