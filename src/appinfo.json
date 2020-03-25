@@ -1,0 +1,13 @@
+{
+    "vendor": "Bitmovin",
+    "largeIcon": "images/bitmovin-icon.png",
+    "icon": "images/icon.png",
+    "main": "index.html",
+    "id": "com.bitmovin.demo.webapp",
+    "title": "Bitmovin",
+    "type": "web",
+    "version": "0.0.1",
+    "iconColor": "#ffffff",
+    "bgColor": "#ffffff",
+    "uiRevision": 2
+}
