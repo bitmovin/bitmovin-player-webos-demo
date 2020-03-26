@@ -12,13 +12,13 @@ This repository contains a sample app that used the Bitmovin HTML5 Player (versi
 ### Using the Sample App with webOS CLI
 
 1. Install dependencies with `npm install`
-2. Activate developer mode on your TV device and use passphrase to run `DEVICE_HOST=<ip> KEY_PASSPHRASE=<pass> npm run connect`
+2. Activate developer mode on your TV device and use passphrase to run `npm run connect <ip|host> <passphrase>`
 4. Input your player key into `src/main.js`
 5. Build the `ipk` package running `npm run build`
-6. Install the app to your device `DEVICE=<ip|name> npm run push`
-7. You can debug the app with remote debugger with `DEVICE=<ip|name> npm run debug`
+6. Install the app to your device `DEVICE=<ip|host> npm run push`
+7. You can debug the app with remote debugger with `DEVICE=<ip|host> npm run debug`
 
-* note: If you are having problem with permissions fore ares CLI try `chmod +x node_modules/ares-webos-sdk/bin/*`
+* note: If you are having problem with permissions for ares CLI try `chmod +x node_modules/ares-webos-sdk/bin/*`
 
 ### Notes for developing your own app
 Make sure to enable `file_protocol` and set your `app_id` in the `tweaks` section of your config
