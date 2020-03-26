@@ -14,7 +14,7 @@ INFO="{ 'host': '$DEVICE_HOST', 'port': '9922', 'username': 'prisoner' }"
 
 BINDIR=node_modules/ares-webos-sdk/bin
 
-# Don't know whether the device is already registered...
+# Is device already setup
 $BINDIR/ares-setup-device.sh --add "$DEVICE_HOST" --info "$INFO" 2>/dev/null \
   || $BINDIR/ares-setup-device.sh --modify "$DEVICE_HOST" --info "$INFO"
 
