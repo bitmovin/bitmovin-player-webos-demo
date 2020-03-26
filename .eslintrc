@@ -1,0 +1,16 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "bitmovin": "writable",
+    "webOS": "writable",
+    "webOSDev": "writable",
+    "Promise": "readonly"
+  },
+  "plugins": [
+    "html"
+  ]
+}
