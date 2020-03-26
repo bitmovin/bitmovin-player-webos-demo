@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "bin/package",
-    "install": "node_modules/ares-webos-sdk/bin/ares-install.sh --device $DEVICE com.bitmovin.demo.webapp_0.0.1_all.ipk",
+    "push": "node_modules/ares-webos-sdk/bin/ares-install.sh --device $DEVICE build/com.bitmovin.demo.webapp_0.0.1_all.ipk",
     "start": "node_modules/ares-webos-sdk/bin/ares-launch.sh --device $DEVICE --app com.bitmovin.demo.webapp",
     "debug": "node_modules/ares-webos-sdk/bin/ares-inspect.sh --device $DEVICE --app com.bitmovin.demo.webapp",
     "stop": "node_modules/ares-webos-sdk/bin/ares-launch.sh --device $DEVICE --close com.bitmovin.demo.webapp",
