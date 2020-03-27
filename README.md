@@ -19,6 +19,7 @@ This repository contains a sample app that used the Bitmovin HTML5 Player (versi
 7. You can debug the app with remote debugger with `DEVICE=<ip|host> npm run debug`
 
 * note: If you are having problem with permissions for ares CLI try `chmod +x node_modules/ares-webos-sdk/bin/*`
+* tip: If continuous running of `DEVICE=<ip|host> npm run debug` does not work you first need to kill the app by running `DEVICE=<ip|host> npm run stop` and then run debug again.
 
 ### Notes for developing your own app
 Make sure to enable `file_protocol` and set your `app_id` in the `tweaks` section of your config
