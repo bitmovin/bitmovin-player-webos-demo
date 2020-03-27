@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+mkdir -p build
+
+node_modules/ares-webos-sdk/bin/ares-package.sh --outdir ./build ./src
