@@ -45,3 +45,6 @@ var conf = {
 Complete API documentation is available at https://developer.bitmovin.com/hc/en-us
 
 Other demo applications https://bitmovin.com/demo/
+
+## Support
+If you have any questions or issues with this SDK or its examples, or you require other technical support for our services, please log in to your Bitmovin Dashboard at https://bitmovin.com/dashboard and [create a new support case](https://bitmovin.com/dashboard/support/cases/create). Our team will get back to you as soon as possible :+1:
