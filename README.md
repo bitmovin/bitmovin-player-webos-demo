@@ -1,13 +1,14 @@
 # bitmovin-player-webos-demo
 This repository contains a sample app that used the Bitmovin HTML5 Player (version 8) on LG webOS
 
-### Using the Sample App with webOS IDE
+### Using the Sample App with `webOS TV` Visual Studio Code extension
 
-1. Download [webOS IDE](http://webostv.developer.lge.com/sdk/download/download-sdk/)
-2. Open the sample app with webOS IDE
-3. Connect your TV Device. This [tutorial](http://webostv.developer.lge.com/develop/app-test/) is a good reference
-4. Input your player key into `src/main.js`
-5. Run/debug the sample app. If you debug, you will see Chrome developer tools launch. This will enable you to debug, monitor network requests, and execute commands through the javascript console.
+1. Install the `webOS TV CLI` as explained in [this tutorial](https://webostv.developer.lge.com/sdk/command-line-interface/installation/)
+2. Install [Visual Studio Code](https://code.visualstudio.com/) and the `webOS TV extension` according to [this tutorial](https://webostv.developer.lge.com/sdk/vs-code-extension/installation/)
+3. Open the sample app in VS Code
+4. Connect your TV Device. This [tutorial](http://webostv.developer.lge.com/develop/app-test/) is a good reference
+5. Input your player key into `src/main.js`
+6. Run/debug the sample app. If you debug, you will see Chrome developer tools launch. This will enable you to debug, monitor network requests, and execute commands through the javascript console.
 
 ### Using the Sample App with webOS CLI
 
