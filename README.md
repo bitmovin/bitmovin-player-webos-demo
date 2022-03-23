@@ -4,11 +4,11 @@ This repository contains a sample app that uses the Bitmovin HTML5 Player (versi
 | File/Folder      | Description                                                                                                                                |
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | index.html       | HTML laying out the structure of the demo and definition of the used player resources                                                      |
-| js/main.js       | main JavaScript file our demo application will use                                                                                         |
-| images/          | place for the application logo                                                                                                             |
-| css/             | stylesheets used for making the demo application pretty                                                                                    |
+| js/main.js       | Main JavaScript file our demo application will use                                                                                         |
+| images/          | Place for the application logo                                                                                                             |
+| css/             | Stylesheets used for making the demo application pretty                                                                                    |
 | webOSTVjs-1.2.4/ | LG-provided library offering TV-specific features ([details](https://webostv.developer.lge.com/develop/code-samples/webostvjs-library/))   |
-| appinfo.json     | contains app-metadata like app-id, title and icon ([details](https://webostv.developer.lge.com/develop/app-developer-guide/app-metadata/)) |
+| appinfo.json     | Contains app-metadata like app-id, title and icon ([details](https://webostv.developer.lge.com/develop/app-developer-guide/app-metadata/)) |
 
 Need some guidance? Check out our tutorial on [how to use the Bitmovin web player on LG webOS TVs](https://bitmovin.com/docs/player/tutorials/getting-started-with-the-web-player-on-lg-webos).
 ### Using the Sample App with `webOS TV` Visual Studio Code extension
