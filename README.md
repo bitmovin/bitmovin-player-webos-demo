@@ -1,5 +1,5 @@
 # bitmovin-player-webos-demo
-This repository contains a sample app that used the Bitmovin HTML5 Player (version 8) on LG webOS. Project structure:
+This repository contains a sample app that uses the Bitmovin HTML5 Player (version 8) on LG webOS. Project structure:
 
 | File/Folder      | Description                                                                                                                                |
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
