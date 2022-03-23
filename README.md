@@ -16,7 +16,7 @@ Need some guidance? Check out our tutorial on [how to use the Bitmovin web playe
 1. Install the `webOS TV CLI` as explained in [this tutorial](https://webostv.developer.lge.com/sdk/command-line-interface/installation/)
 2. Install [Visual Studio Code](https://code.visualstudio.com/) and the `webOS TV extension` according to [this tutorial](https://webostv.developer.lge.com/sdk/vs-code-extension/installation/)
 3. Open the sample app in VS Code
-4. Connect your TV Device. This [tutorial](http://webostv.developer.lge.com/develop/app-test/) is a good reference
+4. Connect to your TV. This [tutorial](http://webostv.developer.lge.com/develop/app-test/) is a good reference
 5. Input your player key into `src/main.js`
 6. Run/debug the sample app. If you debug, you will see Chrome developer tools launch. This will enable you to debug, monitor network requests, and execute commands through the javascript console.
 
