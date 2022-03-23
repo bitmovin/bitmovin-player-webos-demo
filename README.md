@@ -4,7 +4,7 @@ This repository contains a sample app that uses the Bitmovin HTML5 Player (versi
 | File/Folder      | Description                                                                                                                                |
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | index.html       | HTML laying out the structure of the demo and definition of the used player resources                                                      |
-| js/main.js       | main javascript file our demo application will use                                                                                         |
+| js/main.js       | main JavaScript file our demo application will use                                                                                         |
 | images/          | place for the application logo                                                                                                             |
 | css/             | stylesheets used for making the demo application pretty                                                                                    |
 | webOSTVjs-1.2.4/ | LG-provided library offering TV-specific features ([details](https://webostv.developer.lge.com/develop/code-samples/webostvjs-library/))   |
