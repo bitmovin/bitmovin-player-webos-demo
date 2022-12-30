@@ -14,7 +14,8 @@ var source = {
     widevine: {
       LA_URL: 'https://widevine-proxy.appspot.com/proxy'
     }
-  }
+  },
+  title: 'Art of Motion',
 };
 
 window.onload = function () {
@@ -83,11 +84,13 @@ function setupPlayer () {
         forwardduration: 30,
         backwardduration: 10
       }
-    }
+    },
+    ui: false,
   };
 
   var container = document.getElementById('player')
   player = new bitmovin.player.core.Player(container, conf);
+  var uiManager = new bitmovin.playerui.UIFactory.buildDefaultTvUI(player);
 }
 
 function loadSource(source) {
