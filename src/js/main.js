@@ -1,6 +1,8 @@
 /* eslint-env browser */
+/* eslint-env browser */
 var APP_ID = 'com.bitmovin.demo.webapp';
-var PLAYER_KEY = 'key';
+var PLAYER_KEY = '<YOUR_PLAYER_KEY>';
+var ANALYTICS_KEY = '<YOUR_ANALYTICS_KEY>';
 
 var player;
 var source = {
@@ -57,6 +59,8 @@ function setupPlayer () {
   bitmovin.player.core.Player.addModule(window.bitmovin.player.hls.default);
   bitmovin.player.core.Player.addModule(window.bitmovin.player.style.default);
   bitmovin.player.core.Player.addModule(window.bitmovin.player.webos.default);
+  // Analytics
+  bitmovin.player.core.Player.addModule(window.bitmovin.analytics.PlayerModule);
 
   var conf = {
     key: PLAYER_KEY,
@@ -83,6 +87,14 @@ function setupPlayer () {
       audio: {
         forwardduration: 30,
         backwardduration: 10
+      }
+    },
+    analytics: {
+      key: ANALYTICS_KEY,
+      videoId: "AOM",
+      title: "Art Of Motion Analytics Test",
+      config: {
+        origin: APP_ID
       }
     },
     ui: false,
