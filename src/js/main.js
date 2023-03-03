@@ -1,5 +1,4 @@
 /* eslint-env browser */
-/* eslint-env browser */
 var APP_ID = 'com.bitmovin.demo.webapp';
 var PLAYER_KEY = '<YOUR_PLAYER_KEY>';
 var ANALYTICS_KEY = '<YOUR_ANALYTICS_KEY>';
