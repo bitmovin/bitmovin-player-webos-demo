@@ -12,8 +12,8 @@ var source = {
   dash: 'https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd',
   drm: {
     widevine: {
-      LA_URL: 'https://widevine-proxy.appspot.com/proxy'
-    }
+      LA_URL: 'https://widevine-proxy.appspot.com/proxy',
+    },
   },
   title: 'Art of Motion',
 };
@@ -43,7 +43,7 @@ window.onload = function () {
   loadSource(source);
 };
 
-function setupPlayer () {
+function setupPlayer() {
   // add all necessary (and loaded) modules to the player core
   bitmovin.player.core.Player.addModule(window.bitmovin.player.polyfill.default);
   bitmovin.player.core.Player.addModule(window.bitmovin.player['engine-bitmovin'].default);
@@ -62,35 +62,37 @@ function setupPlayer () {
     key: PLAYER_KEY,
     playback: {
       autoplay: true,
-      preferredTech: [{
-        player: 'html5',
-        streaming: 'dash'
-      }]
+      preferredTech: [
+        {
+          player: 'html5',
+          streaming: 'dash',
+        },
+      ],
     },
     style: {
-      ux: false
+      ux: false,
     },
     tweaks: {
       file_protocol: true,
       app_id: APP_ID,
-      BACKWARD_BUFFER_PURGE_INTERVAL: 10
+      BACKWARD_BUFFER_PURGE_INTERVAL: 10,
     },
     buffer: {
       video: {
         forwardduration: 30,
-        backwardduration: 10
+        backwardduration: 10,
       },
       audio: {
         forwardduration: 30,
-        backwardduration: 10
-      }
+        backwardduration: 10,
+      },
     },
     ui: false,
   };
 
-  var container = document.getElementById('player')
+  var container = document.getElementById('player');
   player = new bitmovin.player.core.Player(container, conf);
-  var uiManager = new bitmovin.playerui.UIFactory.buildDefaultTvUI(player);
+  new bitmovin.playerui.UIFactory.buildDefaultTvUI(player);
 }
 
 function loadSource(source) {
@@ -114,7 +116,7 @@ function loadSource(source) {
     });
 }
 
-function setupControllerEvents () {
+function setupControllerEvents() {
   document.addEventListener('keydown', function (inEvent) {
     var keycode;
 
@@ -153,7 +155,7 @@ function setupControllerEvents () {
   });
 }
 
-function tooglePlayPause () {
+function tooglePlayPause() {
   if (player.isPaused()) {
     player.play();
   } else {
@@ -161,11 +163,11 @@ function tooglePlayPause () {
   }
 }
 
-function getDrmAgent (keySystem) {
+function getDrmAgent(keySystem) {
   return webOSDev && keySystem && webOSDev.drmAgent(keySystem);
 }
 
-function loadDrm (drmAgent) {
+function loadDrm(drmAgent) {
   return new Promise(function (resolve, reject) {
     try {
       drmAgent.load({
@@ -174,15 +176,15 @@ function loadDrm (drmAgent) {
         },
         onFailure: function (e) {
           reject(e);
-        }
-      })
+        },
+      });
     } catch (e) {
       reject('Error while loading DRM manager', e);
     }
-  })
+  });
 }
 
-function isDrmLoaded (drmAgent) {
+function isDrmLoaded(drmAgent) {
   return new Promise(function (resolve, reject) {
     if (!drmAgent) {
       return reject('No drmAgent');
@@ -199,12 +201,12 @@ function isDrmLoaded (drmAgent) {
             })
             .catch(function (err) {
               reject(err);
-            })
+            });
         }
       },
       onFailure: function (err) {
         reject(err);
-      }
-    })
-  })
+      },
+    });
+  });
 }
