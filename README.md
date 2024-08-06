@@ -29,7 +29,6 @@ Need some guidance? Check out our tutorial on [how to use the Bitmovin web playe
 6. Install the app to your device `DEVICE=<ip|host> npm run push`
 7. You can debug the app with remote debugger with `DEVICE=<ip|host> npm run debug`
 
-* note: If you are having problem with permissions for ares CLI try `chmod +x node_modules/ares-webos-sdk/bin/*`
 * tip: If continuous running of `DEVICE=<ip|host> npm run debug` does not work you first need to kill the app by running `DEVICE=<ip|host> npm run stop` and then run debug again.
 
 ### Notes for developing your own app
@@ -37,17 +36,14 @@ Make sure to enable `file_protocol` and set your `app_id` in the `tweaks` sectio
 
 ```
 var conf = {
-	key : "<YOUR_PLAYER_KEY>",
-	source : {
-		dash: "https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd"
-	},
-	playback : {
-		autoplay : true
-	},
-	tweaks : {
-		file_protocol : true,
-		app_id : "com.bitmovin.demo.webapp"
-	}
+  key: '<YOUR_PLAYER_KEY>',
+  playback: {
+    autoplay: true
+  },
+  tweaks: {
+    file_protocol: true,
+    app_id: 'com.bitmovin.demo.webapp'
+  },
 };
 ```
 
