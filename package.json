@@ -5,8 +5,8 @@
   "main": "js/main.js",
   "devDependencies": {
     "@webos-tools/cli": "^3.1.1",
-    "eslint": "^6.7.2",
-    "eslint-plugin-html": "^6.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-html": "^6.2.0",
     "prettier": "^1.19.1",
     "standard": "^14.3.1"
   },
@@ -17,7 +17,8 @@
     "debug": "npx ares-inspect --device $DEVICE --app com.bitmovin.demo.webapp",
     "stop": "npx ares-launch --device $DEVICE --close com.bitmovin.demo.webapp",
     "connect": "bin/connect",
-    "clear": "rm -rf ./build/*"
+    "clear": "rm -rf ./build/*",
+    "lint": "npx eslint src/"
   },
   "repository": {
     "type": "git",
