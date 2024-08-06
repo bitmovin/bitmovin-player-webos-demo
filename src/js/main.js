@@ -4,12 +4,11 @@ var PLAYER_KEY = 'key';
 
 var player;
 var source = {
-  // AVC Stream
-  // dash : "https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
-  // HEVC Stream
-  // dash : "https://bitmovin-a.akamaihd.net/content/multi-codec/hevc/stream.mpd"
+  // Clear, unprotected stream
+  // dash: 'https://cdn.bitmovin.com/content/assets/art-of-motion-dash-hls-progressive/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
+
   // Widevine Stream
-  dash: 'https://bitmovin-a.akamaihd.net/content/art-of-motion_drm/mpds/11331.mpd',
+  dash: 'https://cdn.bitmovin.com/content/assets/art-of-motion_drm/mpds/11331.mpd',
   drm: {
     widevine: {
       LA_URL: 'https://widevine-proxy.appspot.com/proxy',
