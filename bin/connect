@@ -12,11 +12,9 @@ fi
 
 INFO="{ 'host': '$DEVICE_HOST', 'port': '9922', 'username': 'prisoner' }"
 
-BINDIR=node_modules/ares-webos-sdk/bin
-
 # Is device already setup
-$BINDIR/ares-setup-device.sh --add "$DEVICE_HOST" --info "$INFO" 2>/dev/null \
-  || $BINDIR/ares-setup-device.sh --modify "$DEVICE_HOST" --info "$INFO"
+npx ares-setup-device --add "$DEVICE_HOST" --info "$INFO" 2>/dev/null \
+  || npx ares-setup-device --modify "$DEVICE_HOST" --info "$INFO"
 
-$BINDIR/ares-novacom.sh --device "$DEVICE_HOST" --getkey --passphrase "$KEY_PASSPHRASE" \
+npx ares-novacom --device "$DEVICE_HOST" --getkey --passphrase "$KEY_PASSPHRASE" \
   || (echo "Cannot get ssh key from device $DEVICE_HOST. Is Key Server enabled in the Developer Mode app?" && exit 1)
