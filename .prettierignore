@@ -1,0 +1,4 @@
+bin/
+build/
+node_modules/
+src/webOSTVjs-*/webOSTV*.js
