@@ -4,7 +4,7 @@
   "description": "This repository contains a sample app that used the Bitmovin HTML5 Player (version 8) on LG webOS",
   "main": "js/main.js",
   "devDependencies": {
-    "ares-webos-sdk": "^3.0.5",
+    "@webos-tools/cli": "^3.1.1",
     "eslint": "^6.7.2",
     "eslint-plugin-html": "^6.0.0",
     "prettier": "^1.19.1",
@@ -12,10 +12,10 @@
   },
   "scripts": {
     "build": "bin/package",
-    "push": "node_modules/ares-webos-sdk/bin/ares-install.sh --device $DEVICE build/com.bitmovin.demo.webapp_0.0.1_all.ipk",
-    "start": "node_modules/ares-webos-sdk/bin/ares-launch.sh --device $DEVICE --app com.bitmovin.demo.webapp",
-    "debug": "node_modules/ares-webos-sdk/bin/ares-inspect.sh --device $DEVICE --app com.bitmovin.demo.webapp",
-    "stop": "node_modules/ares-webos-sdk/bin/ares-launch.sh --device $DEVICE --close com.bitmovin.demo.webapp",
+    "push": "npx ares-install --device $DEVICE build/com.bitmovin.demo.webapp_0.0.1_all.ipk",
+    "start": "npx ares-launch --device $DEVICE --app com.bitmovin.demo.webapp",
+    "debug": "npx ares-inspect --device $DEVICE --app com.bitmovin.demo.webapp",
+    "stop": "npx ares-launch --device $DEVICE --close com.bitmovin.demo.webapp",
     "connect": "bin/connect",
     "clear": "rm -rf ./build/*"
   },
