@@ -66,9 +66,6 @@ function setupPlayer() {
     .build();
 
   // disable the default UI
-  conf.style = {
-    ux: false,
-  };
   conf.ui = false;
 
   // analytics defaults get applied by the config builder
