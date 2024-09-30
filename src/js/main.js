@@ -60,44 +60,22 @@ function setupPlayer() {
   // Analytics
   bitmovin.player.core.Player.addModule(window.bitmovin.analytics.PlayerModule);
 
-  var conf = {
-    key: PLAYER_KEY,
-    playback: {
-      autoplay: true,
-      preferredTech: [
-        {
-          player: 'html5',
-          streaming: 'dash',
-        },
-      ],
-    },
-    style: {
-      ux: false,
-    },
-    tweaks: {
-      file_protocol: true,
-      app_id: APP_ID,
-      BACKWARD_BUFFER_PURGE_INTERVAL: 10,
-    },
-    buffer: {
-      video: {
-        forwardduration: 30,
-        backwardduration: 10,
-      },
-      audio: {
-        forwardduration: 30,
-        backwardduration: 10,
-      },
-    },
-    analytics: {
-      key: ANALYTICS_KEY,
-      videoId: "AOM",
-      title: "Art Of Motion Analytics Test",
-      config: {
-        origin: APP_ID
-      }
-    },
-    ui: false,
+  
+  const conf = new bitmovin.player.core.util.PlayerConfigBuilder(PLAYER_KEY)
+    .optimizeForPlatform({ appId: APP_ID })
+    .build();
+
+  // disable the default UI
+  conf.style = {
+    ux: false,
+  };
+  conf.ui = false;
+
+  // analytics defaults get applied by the config builder
+  conf.analytics = {
+    ...conf.analytics,
+    videoId: "AOM",
+    title: "Art Of Motion Analytics Test",
   };
 
   var container = document.getElementById('player');
