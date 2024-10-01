@@ -71,7 +71,7 @@ function setupPlayer() {
   // disable the default UI
   conf.ui = false;
 
-  // analytics defaults get applied by the config builder
+  // analytics defaults get applied by the config builder on TV models
   conf.analytics.customUserId = 'my-custom-user-id';
 
   var container = document.getElementById('player');
