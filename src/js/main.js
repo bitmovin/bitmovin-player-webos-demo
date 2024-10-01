@@ -69,11 +69,7 @@ function setupPlayer() {
   conf.ui = false;
 
   // analytics defaults get applied by the config builder
-  conf.analytics = {
-    ...conf.analytics,
-    videoId: "AOM",
-    title: "Art Of Motion Analytics Test",
-  };
+conf.analytics.customUserId = 'my-custom-user-id';
 
   var container = document.getElementById('player');
   player = new bitmovin.player.core.Player(container, conf);
