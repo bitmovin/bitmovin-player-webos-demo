@@ -16,6 +16,10 @@ var source = {
     },
   },
   title: 'Art of Motion',
+  analytics: {
+    videoId: "AOM",
+    title: "Art Of Motion Analytics Test",
+  }
 };
 
 window.onload = function () {
@@ -60,7 +64,6 @@ function setupPlayer() {
   // Analytics
   bitmovin.player.core.Player.addModule(window.bitmovin.analytics.PlayerModule);
 
-  
   const conf = new bitmovin.player.core.util.PlayerConfigBuilder(PLAYER_KEY)
     .optimizeForPlatform({ appId: APP_ID })
     .build();
@@ -69,7 +72,7 @@ function setupPlayer() {
   conf.ui = false;
 
   // analytics defaults get applied by the config builder
-conf.analytics.customUserId = 'my-custom-user-id';
+  conf.analytics.customUserId = 'my-custom-user-id';
 
   var container = document.getElementById('player');
   player = new bitmovin.player.core.Player(container, conf);
