@@ -32,7 +32,7 @@ Need some guidance? Check out our tutorial on [how to use the Bitmovin web playe
 * tip: If continuous running of `DEVICE=<ip|host> npm run debug` does not work you first need to kill the app by running `DEVICE=<ip|host> npm run stop` and then run debug again.
 
 ### Notes for developing your own app
-Make sure to enable `file_protocol` and set your `app_id` in the `tweaks` section of your config
+Make sure to enable `file_protocol` and set your `app_id` in the `tweaks` section of your config, or use the PlayerConfigBuilder. 
 
 ```
 var conf = {
