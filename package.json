@@ -5,10 +5,10 @@
   "main": "js/main.js",
   "devDependencies": {
     "@webos-tools/cli": "^3.1.1",
-    "eslint": "^6.8.0",
+    "eslint": "^9.15.0",
     "eslint-plugin-html": "^6.2.0",
     "prettier": "^3.3.3",
-    "standard": "^14.3.1"
+    "standard": "^17.1.2"
   },
   "scripts": {
     "build": "bin/package",
