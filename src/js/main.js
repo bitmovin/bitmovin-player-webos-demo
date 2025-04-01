@@ -111,7 +111,7 @@ function setupControllerEvents() {
     }
     switch (keycode) {
       case 13:
-        tooglePlayPause();
+        togglePlayPause();
         break;
       case 415:
         // Play Button Pressed
@@ -139,7 +139,7 @@ function setupControllerEvents() {
   });
 }
 
-function tooglePlayPause() {
+function togglePlayPause() {
   if (player.isPaused()) {
     player.play();
   } else {
