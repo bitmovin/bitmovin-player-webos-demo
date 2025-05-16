@@ -174,22 +174,29 @@ function isDrmLoaded(drmAgent) {
       return reject('No drmAgent');
     }
 
+    function loadDrmOnFailure() {
+      loadDrm(drmAgent)
+        .then(function (result) {
+          resolve(result);
+        })
+        .catch(function (err) {
+          reject(err);
+        });
+    }
+
     drmAgent.isLoaded({
       onSuccess: function (response) {
         if (response.loadStatus === true) {
           resolve(response);
         } else {
-          loadDrm(drmAgent)
-            .then(function (result) {
-              resolve(result);
-            })
-            .catch(function (err) {
-              reject(err);
-            });
+          loadDrmOnFailure();
         }
       },
       onFailure: function (err) {
-        reject(err);
+        // isLoaded check fails sometimes as the key system requested is not same as loaded
+        // load the desired key system in that case
+        console.error('Error while checking if DRM is loaded', err);
+        loadDrmOnFailure();
       },
     });
   });
